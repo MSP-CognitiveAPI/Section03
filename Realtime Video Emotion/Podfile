@@ -1,0 +1,10 @@
+
+target 'Realtime Video ' do
+	platform :ios, '10.0'
+	use_frameworks!
+
+	pod 'Alamofire'
+	pod 'AlamofireObjectMapper'
+	pod 'RealmSwift'
+	pod 'SDWebImage'
+end
