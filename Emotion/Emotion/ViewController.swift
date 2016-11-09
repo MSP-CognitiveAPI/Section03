@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  Realtime Video Emotion
+//  Emotion
 //
-//  Created by BumMo Koo on 2016. 11. 8..
+//  Created by BumMo Koo on 2016. 11. 9..
 //  Copyright © 2016년 BumMo Koo. All rights reserved.
 //
 
