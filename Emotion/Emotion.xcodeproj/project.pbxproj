@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1600E01A1DD2E9250009F5DD /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1600E0191DD2E9250009F5DD /* CameraViewController.swift */; };
 		167B722E1DD2AE6C00AC8402 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167B722D1DD2AE6C00AC8402 /* AppDelegate.swift */; };
-		167B72301DD2AE6C00AC8402 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167B722F1DD2AE6C00AC8402 /* ViewController.swift */; };
 		167B72331DD2AE6C00AC8402 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 167B72311DD2AE6C00AC8402 /* Main.storyboard */; };
 		167B72351DD2AE6C00AC8402 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 167B72341DD2AE6C00AC8402 /* Assets.xcassets */; };
 		167B72381DD2AE6C00AC8402 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 167B72361DD2AE6C00AC8402 /* LaunchScreen.storyboard */; };
@@ -17,9 +17,9 @@
 
 /* Begin PBXFileReference section */
 		101C3C7C1D4888EFE4C73E07 /* Pods-Emotion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Emotion.release.xcconfig"; path = "Pods/Target Support Files/Pods-Emotion/Pods-Emotion.release.xcconfig"; sourceTree = "<group>"; };
+		1600E0191DD2E9250009F5DD /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		167B722A1DD2AE6C00AC8402 /* Emotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		167B722D1DD2AE6C00AC8402 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		167B722F1DD2AE6C00AC8402 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		167B72321DD2AE6C00AC8402 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		167B72341DD2AE6C00AC8402 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		167B72371DD2AE6C00AC8402 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,6 +40,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1600E0151DD2E6C30009F5DD /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				167B722D1DD2AE6C00AC8402 /* AppDelegate.swift */,
+				167B72391DD2AE6C00AC8402 /* Info.plist */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		1600E0161DD2E6C80009F5DD /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				167B72311DD2AE6C00AC8402 /* Main.storyboard */,
+				167B72361DD2AE6C00AC8402 /* LaunchScreen.storyboard */,
+			);
+			name = "User Interface";
+			sourceTree = "<group>";
+		};
+		1600E0171DD2E6D30009F5DD /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				167B72341DD2AE6C00AC8402 /* Assets.xcassets */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		1600E0181DD2E6E80009F5DD /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1600E0191DD2E9250009F5DD /* CameraViewController.swift */,
+			);
+			name = "View Controller";
+			sourceTree = "<group>";
+		};
 		167B72211DD2AE6C00AC8402 = {
 			isa = PBXGroup;
 			children = (
@@ -61,12 +95,10 @@
 		167B722C1DD2AE6C00AC8402 /* Emotion */ = {
 			isa = PBXGroup;
 			children = (
-				167B722D1DD2AE6C00AC8402 /* AppDelegate.swift */,
-				167B722F1DD2AE6C00AC8402 /* ViewController.swift */,
-				167B72311DD2AE6C00AC8402 /* Main.storyboard */,
-				167B72341DD2AE6C00AC8402 /* Assets.xcassets */,
-				167B72361DD2AE6C00AC8402 /* LaunchScreen.storyboard */,
-				167B72391DD2AE6C00AC8402 /* Info.plist */,
+				1600E0151DD2E6C30009F5DD /* Application */,
+				1600E0161DD2E6C80009F5DD /* User Interface */,
+				1600E0181DD2E6E80009F5DD /* View Controller */,
+				1600E0171DD2E6D30009F5DD /* Resource */,
 			);
 			path = Emotion;
 			sourceTree = "<group>";
@@ -212,8 +244,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				167B72301DD2AE6C00AC8402 /* ViewController.swift in Sources */,
 				167B722E1DD2AE6C00AC8402 /* AppDelegate.swift in Sources */,
+				1600E01A1DD2E9250009F5DD /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +409,7 @@
 				167B723E1DD2AE6C00AC8402 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
