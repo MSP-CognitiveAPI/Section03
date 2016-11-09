@@ -52,9 +52,25 @@
                     <view key="view" contentMode="scaleToFill" id="4ke-qi-ozP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ILu-xY-V1U">
+                                <rect key="frame" x="20" y="497" width="200" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="ZdJ-Fw-Q5P"/>
+                                    <constraint firstAttribute="height" constant="150" id="qz8-Lj-Hkv"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ILu-xY-V1U" secondAttribute="bottom" constant="20" id="A6K-qb-spV"/>
+                            <constraint firstItem="ILu-xY-V1U" firstAttribute="leading" secondItem="4ke-qi-ozP" secondAttribute="leading" constant="20" id="NmW-ve-2Rf"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Emotion" id="kFw-7w-IUs"/>
+                    <connections>
+                        <outlet property="imageView" destination="ILu-xY-V1U" id="JFf-sH-wpu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="daW-hS-dvK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

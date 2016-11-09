@@ -35,5 +35,9 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Sombra - Your camera is hacked!</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Sombra - Your photo library is hacked!</string>
 </dict>
 </plist>
