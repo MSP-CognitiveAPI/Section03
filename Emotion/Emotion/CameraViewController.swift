@@ -11,8 +11,9 @@ import AVFoundation
 
 class CameraViewController: UIViewController {
     @IBOutlet fileprivate weak var imageView: UIImageView!
+    @IBOutlet fileprivate weak var emotionLabel: UILabel!
     
-    fileprivate var counter = 0
+    fileprivate var frameGrabCounter = 0
     
     var session = AVCaptureSession()
     let camera = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
@@ -93,13 +94,28 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         
         CVPixelBufferLockBaseAddress(imageBuffer, CVPixelBufferLockFlags(rawValue: 0))
         let ciImage = CIImage(cvPixelBuffer: imageBuffer)
-        let image = UIImage(ciImage: ciImage)
+        let image = UIImage(ciImage: ciImage).scale(width: imageView.bounds.width)
         CVPixelBufferUnlockBaseAddress(imageBuffer, CVPixelBufferLockFlags(rawValue: 0))
 
-        counter += 1
-        if self.counter % 5 == 0 {
+        frameGrabCounter += 1
+        print(frameGrabCounter)
+        if self.frameGrabCounter % 120 == 0 { // 40 per sec on iPhone 6s; 20 API calls available per minute
             OperationQueue.main.addOperation { [weak self] in
                 self?.imageView.image = image
+                
+                API.requestEmotions(image: image, handler: { (faces) in
+                    if let faces = faces {
+                        var string = ""
+                        for face in faces {
+                            guard let emoji = face.emotion?.findEmotion().emoji else { continue }
+                            string += emoji
+                            string += "\n"
+                        }
+                        self?.emotionLabel.text = string
+                    } else {
+                        self?.emotionLabel.text = ""
+                    }
+                })
             }
         }
     }
