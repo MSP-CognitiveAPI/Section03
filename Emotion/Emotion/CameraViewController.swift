@@ -15,7 +15,7 @@ class CameraViewController: UIViewController {
     
     fileprivate var frameGrabCounter = 0
     
-    var session = AVCaptureSession()
+    let session = AVCaptureSession()
     let camera = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
     var output: AVCaptureVideoDataOutput?
     var previewLayer: AVCaptureVideoPreviewLayer?

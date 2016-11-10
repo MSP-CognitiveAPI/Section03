@@ -9,7 +9,26 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Camera-->
+        <!--Photo-->
+        <scene sceneID="EAs-Id-Wfw">
+            <objects>
+                <viewController id="kbc-ng-GpD" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MQb-Sy-gTx"/>
+                        <viewControllerLayoutGuide type="bottom" id="esl-io-6c8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Lcw-aj-4Qc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Photo" id="n7f-Pf-b2N"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pGY-hy-OVd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1092" y="-913"/>
+        </scene>
+        <!--Realtime-->
         <scene sceneID="ziL-5r-1Ph">
             <objects>
                 <viewController id="KHO-hp-ATl" sceneMemberID="viewController">
@@ -35,7 +54,7 @@
                             <constraint firstItem="lwM-3O-iTa" firstAttribute="centerY" secondItem="RlK-oc-xFK" secondAttribute="centerY" id="NdM-z5-CZ9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Camera" id="lSZ-Zn-GZY"/>
+                    <navigationItem key="navigationItem" title="Realtime" id="lSZ-Zn-GZY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="epO-rs-h0s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -97,19 +116,20 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <segue destination="7Wg-AT-17g" kind="relationship" relationship="viewControllers" id="K06-eF-RfI"/>
                         <segue destination="per-YD-VCE" kind="relationship" relationship="viewControllers" id="a0A-I5-UOc"/>
                         <segue destination="564-GG-W4o" kind="relationship" relationship="viewControllers" id="dWK-ea-mTQ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pwl-Pp-gVd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-798" y="69"/>
+            <point key="canvasLocation" x="-902" y="-260"/>
         </scene>
-        <!--Camera-->
+        <!--Realtime-->
         <scene sceneID="mJu-tn-WCb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="per-YD-VCE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Camera" id="Whd-xx-AxV"/>
+                    <tabBarItem key="tabBarItem" title="Realtime" image="733-video-camera" id="Whd-xx-AxV"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KTZ-sZ-p8a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -124,11 +144,11 @@
             </objects>
             <point key="canvasLocation" x="152.80000000000001" y="-259.52023988005999"/>
         </scene>
-        <!--History-->
+        <!--Navigation Controller-->
         <scene sceneID="oxu-T6-gEq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="564-GG-W4o" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="History" id="z8J-mJ-xmm"/>
+                    <tabBarItem key="tabBarItem" systemItem="history" id="z8J-mJ-xmm"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="G7I-0G-cPu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -156,7 +176,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bD8-3Q-zEI" id="UzT-T4-X77">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -172,5 +192,28 @@
             </objects>
             <point key="canvasLocation" x="1092" y="394"/>
         </scene>
+        <!--Photo-->
+        <scene sceneID="Wmc-de-Zpr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7Wg-AT-17g" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Photo" image="767-photo-1" id="Sn1-yB-l7K"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="APk-lL-9bd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kbc-ng-GpD" kind="relationship" relationship="rootViewController" id="X9P-OK-Lxc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pCh-6e-zd5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="153" y="-913"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="733-video-camera" width="28" height="18"/>
+        <image name="767-photo-1" width="28" height="23"/>
+    </resources>
 </document>
