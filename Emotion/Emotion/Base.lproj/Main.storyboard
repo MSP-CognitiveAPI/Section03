@@ -12,7 +12,7 @@
         <!--Photo-->
         <scene sceneID="EAs-Id-Wfw">
             <objects>
-                <viewController id="kbc-ng-GpD" sceneMemberID="viewController">
+                <viewController id="kbc-ng-GpD" customClass="PhotoViewController" customModule="Emotion" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MQb-Sy-gTx"/>
                         <viewControllerLayoutGuide type="bottom" id="esl-io-6c8"/>
@@ -20,13 +20,47 @@
                     <view key="view" contentMode="scaleToFill" id="Lcw-aj-4Qc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qM0-wz-xRv">
+                                <rect key="frame" x="0.0" y="64" width="375" height="344"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSU-jF-bUt">
+                                <rect key="frame" x="30" y="418" width="315" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Me1-49-J7T"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qM0-wz-xRv" firstAttribute="top" secondItem="MQb-Sy-gTx" secondAttribute="bottom" id="KeZ-rA-O2g"/>
+                            <constraint firstItem="esl-io-6c8" firstAttribute="top" secondItem="gSU-jF-bUt" secondAttribute="bottom" id="cZA-Ia-89w"/>
+                            <constraint firstItem="gSU-jF-bUt" firstAttribute="leading" secondItem="Lcw-aj-4Qc" secondAttribute="leading" constant="30" id="kV1-Sx-YYZ"/>
+                            <constraint firstAttribute="trailing" secondItem="gSU-jF-bUt" secondAttribute="trailing" constant="30" id="o74-2J-UXx"/>
+                            <constraint firstAttribute="trailing" secondItem="qM0-wz-xRv" secondAttribute="trailing" id="uVC-fn-IwZ"/>
+                            <constraint firstItem="qM0-wz-xRv" firstAttribute="leading" secondItem="Lcw-aj-4Qc" secondAttribute="leading" id="x2R-IP-5WP"/>
+                            <constraint firstItem="gSU-jF-bUt" firstAttribute="top" secondItem="qM0-wz-xRv" secondAttribute="bottom" constant="10" id="yaS-u3-iX2"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Photo" id="n7f-Pf-b2N"/>
+                    <navigationItem key="navigationItem" title="Photo" id="n7f-Pf-b2N">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="TId-Py-sZg">
+                            <connections>
+                                <action selector="tappedAddWithSender:" destination="kbc-ng-GpD" id="NTr-3X-euC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="emotionLabel" destination="gSU-jF-bUt" id="cjI-Oj-2Ao"/>
+                        <outlet property="imageView" destination="qM0-wz-xRv" id="7Cg-xq-woc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pGY-hy-OVd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1092" y="-913"/>
+            <point key="canvasLocation" x="1092" y="-913.49325337331345"/>
         </scene>
         <!--Realtime-->
         <scene sceneID="ziL-5r-1Ph">
