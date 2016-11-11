@@ -28,7 +28,9 @@ class CameraViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        session.startRunning()
+        if UIImagePickerController.isSourceTypeAvailable(.camera) == true {
+            session.startRunning()
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -43,7 +45,9 @@ class CameraViewController: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        session.stopRunning()
+        if session.isRunning == true {
+            session.stopRunning()
+        }
     }
     
     // MARK: Action
