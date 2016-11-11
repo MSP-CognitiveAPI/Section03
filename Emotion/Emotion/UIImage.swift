@@ -28,6 +28,20 @@ extension UIImage {
         return newImage
     }
     
+    func markFaces(faces: [Face]?) -> UIImage {
+        var markedImage = self
+        if let faces = faces {
+            for face in faces {
+                if let rect = face.faceRect?.cgRect {
+                    if let newImage = markedImage.mark(rect: rect) {
+                        markedImage = newImage
+                    }
+                }
+            }
+        }
+        return markedImage
+    }
+    
     func mark(rect: CGRect) -> UIImage? {
         UIGraphicsBeginImageContext(CGSize(width: size.width, height: size.height))
         draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))

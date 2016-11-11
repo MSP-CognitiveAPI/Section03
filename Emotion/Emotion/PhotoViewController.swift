@@ -51,20 +51,6 @@ class PhotoViewController: UIViewController {
             emotionLabel.text = "Add an image with a face to detect emotion.\n\nOnly result of first face is shown is multiple faces are found."
         }
     }
-    
-    fileprivate func drawRectIn(image: UIImage, faces: [Face]?) -> UIImage {
-        var markedImage = image
-        if let faces = faces {
-            for face in faces {
-                if let rect = face.faceRect?.cgRect {
-                    if let newImage = markedImage.mark(rect: rect) {
-                        markedImage = newImage
-                    }
-                }
-            }
-        }
-        return markedImage
-    }
 }
 
 extension PhotoViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -81,7 +67,7 @@ extension PhotoViewController: UIImagePickerControllerDelegate, UINavigationCont
             API.requestEmotions(image: image, handler: { [weak self] faces in
                 let face = faces?.first
                 self?.updateEmotionLabel(emotion: face?.emotion)
-                let markedImage = self?.drawRectIn(image: image, faces: faces)
+                let markedImage = image.markFaces(faces: faces)
                 self?.imageView.image = markedImage
             })
         }
