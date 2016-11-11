@@ -11,7 +11,6 @@ import AVFoundation
 
 class CameraViewController: UIViewController {
     @IBOutlet fileprivate weak var imageView: UIImageView!
-    @IBOutlet fileprivate weak var emotionLabel: UILabel!
     
     fileprivate var frameGrabCounter = 0
     
@@ -23,13 +22,13 @@ class CameraViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCamera()
-        setVideoOrientation()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if UIImagePickerController.isSourceTypeAvailable(.camera) == true {
             session.startRunning()
+            setVideoOrientation()
         }
     }
     
@@ -105,8 +104,7 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
 //        print(frameGrabCounter)
         if self.frameGrabCounter % 120 == 0 { // 40 per sec on iPhone 6s; 20 API calls available per minute
             OperationQueue.main.addOperation { [weak self] in
-                self?.imageView.image = image
-                
+                self?.imageView.image = nil
                 API.requestEmotions(image: image, handler: { (faces) in
                     if let faces = faces {
                         var string = ""
@@ -115,11 +113,8 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
                             string += emoji
                             string += "\n"
                         }
-                        let image = image.mark(faces: faces)
+                        let image = image.mark(faces: faces, showImage: false)
                         self?.imageView.image = image
-                        self?.emotionLabel.text = string
-                    } else {
-                        self?.emotionLabel.text = ""
                     }
                 })
             }
