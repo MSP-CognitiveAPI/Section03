@@ -57,7 +57,7 @@ class PhotoViewController: UIViewController {
         if let faces = faces {
             for face in faces {
                 if let rect = face.faceRect?.cgRect {
-                    if let newImage = image.mark(rect: rect) {
+                    if let newImage = markedImage.mark(rect: rect) {
                         markedImage = newImage
                     }
                 }
