@@ -61,7 +61,8 @@ extension PhotoViewController: UIImagePickerControllerDelegate, UINavigationCont
         var image: UIImage?
         image = info[UIImagePickerControllerOriginalImage] as? UIImage
         image = info[UIImagePickerControllerEditedImage] as? UIImage ?? image
-        imageView.image = image?.scale(width: 1000)
+        image = image?.scale(width: 1000)
+        imageView.image = image
         
         if let image = image {
             API.requestEmotions(image: image, handler: { [weak self] faces in
