@@ -102,7 +102,7 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         CVPixelBufferUnlockBaseAddress(imageBuffer, CVPixelBufferLockFlags(rawValue: 0))
 
         frameGrabCounter += 1
-        print(frameGrabCounter)
+//        print(frameGrabCounter)
         if self.frameGrabCounter % 120 == 0 { // 40 per sec on iPhone 6s; 20 API calls available per minute
             OperationQueue.main.addOperation { [weak self] in
                 self?.imageView.image = image
@@ -115,6 +115,8 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
                             string += emoji
                             string += "\n"
                         }
+                        let image = image.mark(faces: faces)
+                        self?.imageView.image = image
                         self?.emotionLabel.text = string
                     } else {
                         self?.emotionLabel.text = ""
