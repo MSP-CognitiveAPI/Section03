@@ -8,6 +8,7 @@
 
 import Foundation
 import ObjectMapper
+import RealmSwift
 
 enum EmotionType {
     case anger(Double)
@@ -33,7 +34,7 @@ enum EmotionType {
     }
 }
 
-class Emotion: Mappable {
+class Emotion: Object, Mappable {
     dynamic var anger = 0.0
     dynamic var contempt = 0.0
     dynamic var disgust = 0.0

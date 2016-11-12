@@ -8,8 +8,9 @@
 
 import Foundation
 import ObjectMapper
+import RealmSwift
 
-class FaceRect: Mappable {
+class FaceRect: Object, Mappable {
     dynamic var top = 0.0
     dynamic var left = 0.0
     dynamic var width = 0.0

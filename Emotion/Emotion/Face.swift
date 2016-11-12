@@ -8,10 +8,13 @@
 
 import Foundation
 import ObjectMapper
+import RealmSwift
 
-class Face: Mappable {
-    var faceRect: FaceRect?
-    var emotion: Emotion?
+class Face: Object, Mappable, RealmWriteable {
+    dynamic var identifier = UUID().uuidString
+    dynamic var faceRect: FaceRect?
+    dynamic var emotion: Emotion?
+    let photos = LinkingObjects(fromType: Photo.self, property: "faces")
     
     required convenience init?(map: Map) {
         self.init()
@@ -20,5 +23,9 @@ class Face: Mappable {
     func mapping(map: Map) {
         faceRect <- map["faceRectangle"]
         emotion <- map["scores"]
+    }
+    
+    override class func primaryKey() -> String {
+        return "identifier"
     }
 }

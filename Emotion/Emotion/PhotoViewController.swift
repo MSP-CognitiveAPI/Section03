@@ -66,10 +66,17 @@ extension PhotoViewController: UIImagePickerControllerDelegate, UINavigationCont
         
         if let image = image {
             API.requestEmotions(image: image, handler: { [weak self] faces in
-                let face = faces?.first
+                guard let faces = faces else { return }
+                let face = faces.first
                 self?.updateEmotionLabel(emotion: face?.emotion)
                 let markedImage = image.mark(faces: faces)
                 self?.imageView.image = markedImage
+                
+                // Save result
+                let photo = Photo()
+                photo.image = image
+                photo.faces.append(objectsIn: faces)
+                photo.update()
             })
         }
         

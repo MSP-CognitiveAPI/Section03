@@ -146,7 +146,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="1tR-tq-vIE" kind="relationship" relationship="rootViewController" id="TCg-wt-f7R"/>
+                        <segue destination="FeQ-xK-Abe" kind="relationship" relationship="rootViewController" id="r2G-SJ-p3F"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OWC-qc-Wcp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -154,33 +154,74 @@
             <point key="canvasLocation" x="152.80000000000001" y="395.35232383808096"/>
         </scene>
         <!--History-->
-        <scene sceneID="xfi-O7-QQf">
+        <scene sceneID="J6W-HZ-TZX">
             <objects>
-                <tableViewController id="1tR-tq-vIE" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="xjS-Tx-cVu">
+                <viewController id="FeQ-xK-Abe" customClass="HistoryViewController" customModule="Emotion" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9Jo-uG-cHn"/>
+                        <viewControllerLayoutGuide type="bottom" id="kUA-Ei-bf2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Cod-Dh-5gj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QOm-RV-y7Z">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PAw-Bg-cAF">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="k43-od-1EV" customClass="PhotoCell" customModule="Emotion" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oMA-HS-kEp">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="oMA-HS-kEp" secondAttribute="bottom" id="1Tj-IB-k2S"/>
+                                            <constraint firstItem="oMA-HS-kEp" firstAttribute="leading" secondItem="k43-od-1EV" secondAttribute="leading" id="DhC-2t-z3R"/>
+                                            <constraint firstAttribute="trailing" secondItem="oMA-HS-kEp" secondAttribute="trailing" id="HRI-i3-KdZ"/>
+                                            <constraint firstItem="oMA-HS-kEp" firstAttribute="top" secondItem="k43-od-1EV" secondAttribute="top" id="cda-Ko-N9Y"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="oMA-HS-kEp" id="gDX-XK-aEe"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bD8-3Q-zEI">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bD8-3Q-zEI" id="UzT-T4-X77">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="1tR-tq-vIE" id="2VM-3v-bo7"/>
-                            <outlet property="delegate" destination="1tR-tq-vIE" id="OFD-3D-0W1"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="History" id="rEf-0S-llt"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Iq5-Lz-PQ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="QOm-RV-y7Z" firstAttribute="leading" secondItem="Cod-Dh-5gj" secondAttribute="leading" id="3By-CP-CoP"/>
+                            <constraint firstAttribute="trailing" secondItem="QOm-RV-y7Z" secondAttribute="trailing" id="ZrF-oY-dVh"/>
+                            <constraint firstItem="QOm-RV-y7Z" firstAttribute="top" secondItem="Cod-Dh-5gj" secondAttribute="top" id="sKN-2i-B9n"/>
+                            <constraint firstItem="kUA-Ei-bf2" firstAttribute="top" secondItem="QOm-RV-y7Z" secondAttribute="bottom" id="svy-ak-Gag"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="History" id="IGL-Hr-apR">
+                        <barButtonItem key="rightBarButtonItem" title="Mode" id="77P-Y6-mVP">
+                            <connections>
+                                <action selector="tappedModeWithSender:" destination="FeQ-xK-Abe" id="dgT-K4-dCL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="QOm-RV-y7Z" id="mn3-I7-ZDX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rad-A6-nD8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1092" y="394"/>
+            <point key="canvasLocation" x="1092" y="393.55322338830587"/>
         </scene>
         <!--Photo-->
         <scene sceneID="Wmc-de-Zpr">

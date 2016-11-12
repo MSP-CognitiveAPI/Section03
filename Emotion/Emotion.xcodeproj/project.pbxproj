@@ -13,6 +13,10 @@
 		1600E0221DD331B90009F5DD /* FaceRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1600E0211DD331B90009F5DD /* FaceRect.swift */; };
 		1600E0241DD332240009F5DD /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1600E0231DD332240009F5DD /* Emotion.swift */; };
 		1600E0271DD3360B0009F5DD /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1600E0261DD3360B0009F5DD /* UIImage.swift */; };
+		162E56181DD6D0E300325A29 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162E56171DD6D0E300325A29 /* Photo.swift */; };
+		162E561B1DD6D21800325A29 /* RealmWriteable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162E561A1DD6D21800325A29 /* RealmWriteable.swift */; };
+		162E561D1DD6D40500325A29 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162E561C1DD6D40500325A29 /* HistoryViewController.swift */; };
+		162E561F1DD6D40F00325A29 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162E561E1DD6D40F00325A29 /* PhotoCell.swift */; };
 		167B722E1DD2AE6C00AC8402 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167B722D1DD2AE6C00AC8402 /* AppDelegate.swift */; };
 		167B72331DD2AE6C00AC8402 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 167B72311DD2AE6C00AC8402 /* Main.storyboard */; };
 		167B72351DD2AE6C00AC8402 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 167B72341DD2AE6C00AC8402 /* Assets.xcassets */; };
@@ -29,6 +33,10 @@
 		1600E0211DD331B90009F5DD /* FaceRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceRect.swift; sourceTree = "<group>"; };
 		1600E0231DD332240009F5DD /* Emotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
 		1600E0261DD3360B0009F5DD /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		162E56171DD6D0E300325A29 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		162E561A1DD6D21800325A29 /* RealmWriteable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmWriteable.swift; sourceTree = "<group>"; };
+		162E561C1DD6D40500325A29 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		162E561E1DD6D40F00325A29 /* PhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		167B722A1DD2AE6C00AC8402 /* Emotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		167B722D1DD2AE6C00AC8402 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		167B72321DD2AE6C00AC8402 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -83,6 +91,8 @@
 			children = (
 				169DB37E1DD43E8C00B92FD6 /* PhotoViewController.swift */,
 				1600E0191DD2E9250009F5DD /* CameraViewController.swift */,
+				162E561C1DD6D40500325A29 /* HistoryViewController.swift */,
+				162E561E1DD6D40F00325A29 /* PhotoCell.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -98,6 +108,7 @@
 		1600E01C1DD32F130009F5DD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				162E56171DD6D0E300325A29 /* Photo.swift */,
 				1600E01F1DD331530009F5DD /* Face.swift */,
 				1600E0211DD331B90009F5DD /* FaceRect.swift */,
 				1600E0231DD332240009F5DD /* Emotion.swift */,
@@ -111,6 +122,14 @@
 				1600E0261DD3360B0009F5DD /* UIImage.swift */,
 			);
 			name = Extension;
+			sourceTree = "<group>";
+		};
+		162E56191DD6D20400325A29 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				162E561A1DD6D21800325A29 /* RealmWriteable.swift */,
+			);
+			name = Protocol;
 			sourceTree = "<group>";
 		};
 		167B72211DD2AE6C00AC8402 = {
@@ -139,6 +158,7 @@
 				1600E01C1DD32F130009F5DD /* Model */,
 				1600E01B1DD32F0E0009F5DD /* Controller */,
 				1600E0181DD2E6E80009F5DD /* View Controller */,
+				162E56191DD6D20400325A29 /* Protocol */,
 				1600E0251DD336000009F5DD /* Extension */,
 				1600E0171DD2E6D30009F5DD /* Resource */,
 			);
@@ -289,6 +309,10 @@
 				167B722E1DD2AE6C00AC8402 /* AppDelegate.swift in Sources */,
 				1600E01E1DD32F300009F5DD /* API.swift in Sources */,
 				1600E0201DD331530009F5DD /* Face.swift in Sources */,
+				162E561B1DD6D21800325A29 /* RealmWriteable.swift in Sources */,
+				162E561F1DD6D40F00325A29 /* PhotoCell.swift in Sources */,
+				162E56181DD6D0E300325A29 /* Photo.swift in Sources */,
+				162E561D1DD6D40500325A29 /* HistoryViewController.swift in Sources */,
 				1600E0221DD331B90009F5DD /* FaceRect.swift in Sources */,
 				1600E01A1DD2E9250009F5DD /* CameraViewController.swift in Sources */,
 				169DB37F1DD43E8C00B92FD6 /* PhotoViewController.swift in Sources */,

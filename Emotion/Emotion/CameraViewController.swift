@@ -106,16 +106,21 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
             OperationQueue.main.addOperation { [weak self] in
                 self?.imageView.image = nil
                 API.requestEmotions(image: image, handler: { (faces) in
-                    if let faces = faces {
-                        var string = ""
-                        for face in faces {
-                            guard let emoji = face.emotion?.findEmotion().emoji else { continue }
-                            string += emoji
-                            string += "\n"
-                        }
-                        let image = image.mark(faces: faces, showImage: false)
-                        self?.imageView.image = image
+                    guard let faces = faces else { return }
+                    var string = ""
+                    for face in faces {
+                        guard let emoji = face.emotion?.findEmotion().emoji else { continue }
+                        string += emoji
+                        string += "\n"
                     }
+                    let overlayImage = image.mark(faces: faces, showImage: false)
+                    self?.imageView.image = overlayImage
+                    
+                    // Save result
+                    let photo = Photo()
+                    photo.image = image
+                    photo.faces.append(objectsIn: faces)
+                    photo.update()
                 })
             }
         }
