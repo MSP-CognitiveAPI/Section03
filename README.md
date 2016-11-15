@@ -30,6 +30,9 @@ This project is a simple iOS application that utilizes Microsoft Cognitive Servi
 * [Emotion API](https://www.microsoft.com/cognitive-services/en-us/emotion-api)
   * [Documentation](https://www.microsoft.com/cognitive-services/en-us/emotion-api/documentation)
   * [API Reference](https://dev.projectoxford.ai/docs/services/5639d931ca73072154c1ce89/operations/563b31ea778daf121cc3a5fa)
+* [Face API](https://www.microsoft.com/cognitive-services/en-us/face-api)
+  * [Documentation](https://www.microsoft.com/cognitive-services/en-us/face-api/documentation/overview)
+  * [API Reference](https://dev.projectoxford.ai/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)
 
 ## License
 
