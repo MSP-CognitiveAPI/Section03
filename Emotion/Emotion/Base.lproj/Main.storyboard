@@ -209,7 +209,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="History" id="IGL-Hr-apR">
-                        <barButtonItem key="rightBarButtonItem" title="Mode" id="77P-Y6-mVP">
+                        <barButtonItem key="leftBarButtonItem" title="Group Faces" id="XJf-FQ-Rog">
+                            <connections>
+                                <action selector="tappedGroupFacesWithSender:" destination="FeQ-xK-Abe" id="fEG-Xr-L3F"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="View Mode" id="77P-Y6-mVP">
                             <connections>
                                 <action selector="tappedModeWithSender:" destination="FeQ-xK-Abe" id="dgT-K4-dCL"/>
                             </connections>
@@ -217,6 +222,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="QOm-RV-y7Z" id="mn3-I7-ZDX"/>
+                        <outlet property="groupFaceButton" destination="XJf-FQ-Rog" id="BZW-t1-qDj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rad-A6-nD8" userLabel="First Responder" sceneMemberID="firstResponder"/>

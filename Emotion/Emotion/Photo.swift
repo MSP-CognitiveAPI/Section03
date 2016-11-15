@@ -13,6 +13,7 @@ import SDWebImage
 class Photo: Object, RealmWriteable {
     dynamic var identifier = UUID().uuidString
     let faces = List<Face>()
+    let identifiableFaces = List<IdentifiableFace>()
     
     var image: UIImage? {
         get {

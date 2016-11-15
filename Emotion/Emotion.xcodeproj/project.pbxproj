@@ -21,6 +21,8 @@
 		167B72331DD2AE6C00AC8402 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 167B72311DD2AE6C00AC8402 /* Main.storyboard */; };
 		167B72351DD2AE6C00AC8402 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 167B72341DD2AE6C00AC8402 /* Assets.xcassets */; };
 		167B72381DD2AE6C00AC8402 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 167B72361DD2AE6C00AC8402 /* LaunchScreen.storyboard */; };
+		168E67011DDADE3F00E8E590 /* FaceGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168E67001DDADE3F00E8E590 /* FaceGroup.swift */; };
+		168E67051DDAE77A00E8E590 /* IdentifiableFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168E67041DDAE77A00E8E590 /* IdentifiableFace.swift */; };
 		169DB37F1DD43E8C00B92FD6 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169DB37E1DD43E8C00B92FD6 /* PhotoViewController.swift */; };
 		EB764B048788D85A7D4D4954 /* Pods_Emotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E8B72BB482D7A213A6CBFA /* Pods_Emotion.framework */; };
 /* End PBXBuildFile section */
@@ -43,6 +45,8 @@
 		167B72341DD2AE6C00AC8402 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		167B72371DD2AE6C00AC8402 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		167B72391DD2AE6C00AC8402 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		168E67001DDADE3F00E8E590 /* FaceGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceGroup.swift; sourceTree = "<group>"; };
+		168E67041DDAE77A00E8E590 /* IdentifiableFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentifiableFace.swift; sourceTree = "<group>"; };
 		169DB37E1DD43E8C00B92FD6 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		1743F23C2D89C425A4D253BC /* Pods-Emotion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Emotion.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Emotion/Pods-Emotion.debug.xcconfig"; sourceTree = "<group>"; };
 		76E8B72BB482D7A213A6CBFA /* Pods_Emotion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Emotion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,9 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				162E56171DD6D0E300325A29 /* Photo.swift */,
-				1600E01F1DD331530009F5DD /* Face.swift */,
-				1600E0211DD331B90009F5DD /* FaceRect.swift */,
-				1600E0231DD332240009F5DD /* Emotion.swift */,
+				168E67021DDAE75B00E8E590 /* Emotion */,
+				168E67031DDAE76300E8E590 /* Group */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -163,6 +166,25 @@
 				1600E0171DD2E6D30009F5DD /* Resource */,
 			);
 			path = Emotion;
+			sourceTree = "<group>";
+		};
+		168E67021DDAE75B00E8E590 /* Emotion */ = {
+			isa = PBXGroup;
+			children = (
+				1600E01F1DD331530009F5DD /* Face.swift */,
+				1600E0211DD331B90009F5DD /* FaceRect.swift */,
+				1600E0231DD332240009F5DD /* Emotion.swift */,
+			);
+			name = Emotion;
+			sourceTree = "<group>";
+		};
+		168E67031DDAE76300E8E590 /* Group */ = {
+			isa = PBXGroup;
+			children = (
+				168E67041DDAE77A00E8E590 /* IdentifiableFace.swift */,
+				168E67001DDADE3F00E8E590 /* FaceGroup.swift */,
+			);
+			name = Group;
 			sourceTree = "<group>";
 		};
 		38DE286F7D43D938AD1DC1C9 /* Pods */ = {
@@ -316,6 +338,8 @@
 				1600E0221DD331B90009F5DD /* FaceRect.swift in Sources */,
 				1600E01A1DD2E9250009F5DD /* CameraViewController.swift in Sources */,
 				169DB37F1DD43E8C00B92FD6 /* PhotoViewController.swift in Sources */,
+				168E67051DDAE77A00E8E590 /* IdentifiableFace.swift in Sources */,
+				168E67011DDADE3F00E8E590 /* FaceGroup.swift in Sources */,
 				1600E0241DD332240009F5DD /* Emotion.swift in Sources */,
 				1600E0271DD3360B0009F5DD /* UIImage.swift in Sources */,
 			);
