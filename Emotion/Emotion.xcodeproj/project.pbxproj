@@ -24,6 +24,10 @@
 		168E67011DDADE3F00E8E590 /* FaceGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168E67001DDADE3F00E8E590 /* FaceGroup.swift */; };
 		168E67051DDAE77A00E8E590 /* IdentifiableFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168E67041DDAE77A00E8E590 /* IdentifiableFace.swift */; };
 		169DB37F1DD43E8C00B92FD6 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169DB37E1DD43E8C00B92FD6 /* PhotoViewController.swift */; };
+		16E605A51DDC2246000BC9E7 /* Demo_API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E605A41DDC2246000BC9E7 /* Demo_API.swift */; };
+		16E605A71DDC2269000BC9E7 /* Demo_PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E605A61DDC2269000BC9E7 /* Demo_PhotoViewController.swift */; };
+		16E605A91DDC2275000BC9E7 /* Demo_CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E605A81DDC2275000BC9E7 /* Demo_CameraViewController.swift */; };
+		16E605AB1DDC2281000BC9E7 /* Demo_HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E605AA1DDC2281000BC9E7 /* Demo_HistoryViewController.swift */; };
 		EB764B048788D85A7D4D4954 /* Pods_Emotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E8B72BB482D7A213A6CBFA /* Pods_Emotion.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +52,10 @@
 		168E67001DDADE3F00E8E590 /* FaceGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceGroup.swift; sourceTree = "<group>"; };
 		168E67041DDAE77A00E8E590 /* IdentifiableFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentifiableFace.swift; sourceTree = "<group>"; };
 		169DB37E1DD43E8C00B92FD6 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		16E605A41DDC2246000BC9E7 /* Demo_API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Demo_API.swift; path = Emotion/Demo_API.swift; sourceTree = "<group>"; };
+		16E605A61DDC2269000BC9E7 /* Demo_PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Demo_PhotoViewController.swift; path = Emotion/Demo_PhotoViewController.swift; sourceTree = "<group>"; };
+		16E605A81DDC2275000BC9E7 /* Demo_CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Demo_CameraViewController.swift; path = Emotion/Demo_CameraViewController.swift; sourceTree = "<group>"; };
+		16E605AA1DDC2281000BC9E7 /* Demo_HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Demo_HistoryViewController.swift; path = Emotion/Demo_HistoryViewController.swift; sourceTree = "<group>"; };
 		1743F23C2D89C425A4D253BC /* Pods-Emotion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Emotion.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Emotion/Pods-Emotion.debug.xcconfig"; sourceTree = "<group>"; };
 		76E8B72BB482D7A213A6CBFA /* Pods_Emotion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Emotion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -138,10 +146,8 @@
 		167B72211DD2AE6C00AC8402 = {
 			isa = PBXGroup;
 			children = (
-				167B722C1DD2AE6C00AC8402 /* Emotion */,
-				167B722B1DD2AE6C00AC8402 /* Products */,
-				38DE286F7D43D938AD1DC1C9 /* Pods */,
-				F923B01650AF68E2646A1E46 /* Frameworks */,
+				16E605A21DDC21F0000BC9E7 /* Demo */,
+				16E605A31DDC2200000BC9E7 /* Application */,
 			);
 			sourceTree = "<group>";
 		};
@@ -185,6 +191,28 @@
 				168E67001DDADE3F00E8E590 /* FaceGroup.swift */,
 			);
 			name = Group;
+			sourceTree = "<group>";
+		};
+		16E605A21DDC21F0000BC9E7 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				16E605A41DDC2246000BC9E7 /* Demo_API.swift */,
+				16E605A61DDC2269000BC9E7 /* Demo_PhotoViewController.swift */,
+				16E605A81DDC2275000BC9E7 /* Demo_CameraViewController.swift */,
+				16E605AA1DDC2281000BC9E7 /* Demo_HistoryViewController.swift */,
+			);
+			name = Demo;
+			sourceTree = "<group>";
+		};
+		16E605A31DDC2200000BC9E7 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				167B722C1DD2AE6C00AC8402 /* Emotion */,
+				167B722B1DD2AE6C00AC8402 /* Products */,
+				38DE286F7D43D938AD1DC1C9 /* Pods */,
+				F923B01650AF68E2646A1E46 /* Frameworks */,
+			);
+			name = Application;
 			sourceTree = "<group>";
 		};
 		38DE286F7D43D938AD1DC1C9 /* Pods */ = {
@@ -331,9 +359,13 @@
 				167B722E1DD2AE6C00AC8402 /* AppDelegate.swift in Sources */,
 				1600E01E1DD32F300009F5DD /* API.swift in Sources */,
 				1600E0201DD331530009F5DD /* Face.swift in Sources */,
+				16E605A51DDC2246000BC9E7 /* Demo_API.swift in Sources */,
 				162E561B1DD6D21800325A29 /* RealmWriteable.swift in Sources */,
 				162E561F1DD6D40F00325A29 /* PhotoCell.swift in Sources */,
+				16E605A71DDC2269000BC9E7 /* Demo_PhotoViewController.swift in Sources */,
 				162E56181DD6D0E300325A29 /* Photo.swift in Sources */,
+				16E605AB1DDC2281000BC9E7 /* Demo_HistoryViewController.swift in Sources */,
+				16E605A91DDC2275000BC9E7 /* Demo_CameraViewController.swift in Sources */,
 				162E561D1DD6D40500325A29 /* HistoryViewController.swift in Sources */,
 				1600E0221DD331B90009F5DD /* FaceRect.swift in Sources */,
 				1600E01A1DD2E9250009F5DD /* CameraViewController.swift in Sources */,

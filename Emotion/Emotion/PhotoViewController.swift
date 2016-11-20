@@ -43,13 +43,24 @@ class PhotoViewController: UIViewController {
     }
     
     // MARK: Helper
-    fileprivate func updateEmotionLabel(emotion: Emotion?) {
+    func updateEmotionLabel(emotion: Emotion?) {
         if let 😶 = emotion {
             let string = "😡 Anger:\t\t\(😶.anger)\n😖\tContempt:\t\(😶.contempt)\n😒\tDisgust:\t\(😶.disgust)\n😱 Fear:\t\t\(😶.fear)\n😄 Happiness:\t\(😶.happiness)\n😐 Neutral:\t\(😶.neutral)\n😢 Sadness:\t\(😶.sadness)\n😮 Surprise\t\(😶.surprise)"
             emotionLabel.text = string
         } else {
             emotionLabel.text = "Add an image with a face to detect emotion.\n\nOnly result of first face is shown is multiple faces are found."
         }
+    }
+    
+    func updateImageView(image: UIImage?) {
+        imageView.image = image
+    }
+    
+    func saveResult(image: UIImage, faces: [Face]) {
+        let photo = Photo()
+        photo.image = image
+        photo.faces.append(objectsIn: faces)
+        photo.update()
     }
 }
 
@@ -65,19 +76,7 @@ extension PhotoViewController: UIImagePickerControllerDelegate, UINavigationCont
         imageView.image = image
         
         if let image = image {
-            API.requestEmotions(image: image, handler: { [weak self] faces in
-                guard let faces = faces else { return }
-                let face = faces.first
-                self?.updateEmotionLabel(emotion: face?.emotion)
-                let markedImage = image.mark(faces: faces)
-                self?.imageView.image = markedImage
-                
-                // Save result
-                let photo = Photo()
-                photo.image = image
-                photo.faces.append(objectsIn: faces)
-                photo.update()
-            })
+            handle(image: image)
         }
         
         picker.dismiss(animated: true, completion: nil)

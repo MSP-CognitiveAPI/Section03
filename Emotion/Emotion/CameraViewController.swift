@@ -10,9 +10,9 @@ import UIKit
 import AVFoundation
 
 class CameraViewController: UIViewController {
-    @IBOutlet fileprivate weak var imageView: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
     
-    fileprivate var frameGrabCounter = 0
+    var frameGrabCounter = 0
     
     let session = AVCaptureSession()
     let camera = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
@@ -89,6 +89,18 @@ class CameraViewController: UIViewController {
         default: break
         }
     }
+    
+    // MARK: Helper
+    func update(image: UIImage?) {
+        imageView.image = image
+    }
+    
+    func saveResult(image: UIImage, faces: [Face]) {
+        let photo = Photo()
+        photo.image = image
+        photo.faces.append(objectsIn: faces)
+        photo.update()
+    }
 }
 
 extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
@@ -100,29 +112,7 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         let image = UIImage(ciImage: ciImage).scale(width: imageView.bounds.width)
         CVPixelBufferUnlockBaseAddress(imageBuffer, CVPixelBufferLockFlags(rawValue: 0))
 
-        frameGrabCounter += 1
 //        print(frameGrabCounter)
-        if self.frameGrabCounter % 120 == 0 { // 40 per sec on iPhone 6s; 20 API calls available per minute
-            OperationQueue.main.addOperation { [weak self] in
-                self?.imageView.image = nil
-                API.requestEmotions(image: image, handler: { (faces) in
-                    guard let faces = faces else { return }
-                    var string = ""
-                    for face in faces {
-                        guard let emoji = face.emotion?.findEmotion().emoji else { continue }
-                        string += emoji
-                        string += "\n"
-                    }
-                    let overlayImage = image.mark(faces: faces, showImage: false)
-                    self?.imageView.image = overlayImage
-                    
-                    // Save result
-                    let photo = Photo()
-                    photo.image = image
-                    photo.faces.append(objectsIn: faces)
-                    photo.update()
-                })
-            }
-        }
+        handle(image: image)
     }
 }
