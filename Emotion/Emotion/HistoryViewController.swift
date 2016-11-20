@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import SDWebImage
 
 class HistoryViewController: UIViewController {
     @IBOutlet fileprivate weak var collectionView: UICollectionView!
@@ -77,6 +78,13 @@ class HistoryViewController: UIViewController {
                 }
             })
         }
+    }
+    
+    @IBAction private func tappedClear(sender: UIBarButtonItem) {
+        try? realm?.write { [weak self] in
+            self?.realm?.deleteAll()
+        }
+        SDImageCache.shared().clearDisk()
     }
 }
 

@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -237,11 +238,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="History" id="IGL-Hr-apR">
-                        <barButtonItem key="leftBarButtonItem" title="Group Faces" id="XJf-FQ-Rog">
-                            <connections>
-                                <action selector="tappedGroupFacesWithSender:" destination="FeQ-xK-Abe" id="fEG-Xr-L3F"/>
-                            </connections>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem title="Group" id="XJf-FQ-Rog">
+                                <connections>
+                                    <action selector="tappedGroupFacesWithSender:" destination="FeQ-xK-Abe" id="fEG-Xr-L3F"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Clear" id="1n0-ps-uhx">
+                                <connections>
+                                    <action selector="tappedClearWithSender:" destination="FeQ-xK-Abe" id="BRN-ca-9jV"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" title="View Mode" id="77P-Y6-mVP">
                             <connections>
                                 <action selector="tappedModeWithSender:" destination="FeQ-xK-Abe" id="dgT-K4-dCL"/>
