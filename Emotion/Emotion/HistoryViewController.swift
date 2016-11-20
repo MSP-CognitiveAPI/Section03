@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import SDWebImage
 
 class HistoryViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
@@ -57,6 +58,13 @@ class HistoryViewController: UIViewController {
     @IBAction private func tappedGroupFaces(sender: UIBarButtonItem) {
        handleGroupFaces()
     }
+    
+    @IBAction private func tappedClear(sender: UIBarButtonItem) {
+        try? realm?.write { [weak self] in
+            self?.realm?.deleteAll()
+        }
+        SDImageCache.shared().clearDisk()
+    }
 }
 
 extension HistoryViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
@@ -91,6 +99,7 @@ extension HistoryViewController: UICollectionViewDelegateFlowLayout, UICollectio
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! PhotoCell
         if facesGrouped == true {
+            cell.labelBackgroundView.isHidden = true
             if indexPath.section == groups?.count {
                 guard let faceId = messyGroup?[indexPath.row] else { return cell }
                 guard let face = realm?.object(ofType: IdentifiableFace.self, forPrimaryKey: faceId) else { return cell }
@@ -111,6 +120,7 @@ extension HistoryViewController: UICollectionViewDelegateFlowLayout, UICollectio
             }
         } else {
             if showPhotos == true {
+                cell.labelBackgroundView.isHidden = true
                 if let photo = photos?[indexPath.row] {
                     cell.imageView.image = photo.image
                 }
@@ -121,6 +131,8 @@ extension HistoryViewController: UICollectionViewDelegateFlowLayout, UICollectio
                         image = image?.crop(rect: rect)
                     }
                     cell.imageView.image = image
+                    cell.labelBackgroundView.isHidden = false
+                    cell.emotionLabel.text = face.emotion?.findEmotion().emoji
                 }
             }
         }

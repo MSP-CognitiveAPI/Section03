@@ -10,9 +10,12 @@ import UIKit
 
 class PhotoCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var labelBackgroundView: UIVisualEffectView!
+    @IBOutlet weak var emotionLabel: UILabel!
     
     override func prepareForReuse() {
         super.prepareForReuse()
         imageView.image = nil
+        emotionLabel.text = ""
     }
 }
