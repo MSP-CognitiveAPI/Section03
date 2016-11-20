@@ -125,6 +125,7 @@
 				168E67031DDAE76300E8E590 /* Group */,
 			);
 			name = Model;
+			path = Emotion;
 			sourceTree = "<group>";
 		};
 		1600E0251DD336000009F5DD /* Extension */ = {
@@ -164,7 +165,6 @@
 			children = (
 				1600E0151DD2E6C30009F5DD /* Application */,
 				1600E0161DD2E6C80009F5DD /* User Interface */,
-				1600E01C1DD32F130009F5DD /* Model */,
 				1600E01B1DD32F0E0009F5DD /* Controller */,
 				1600E0181DD2E6E80009F5DD /* View Controller */,
 				162E56191DD6D20400325A29 /* Protocol */,
@@ -200,6 +200,7 @@
 				16E605A61DDC2269000BC9E7 /* Demo_PhotoViewController.swift */,
 				16E605A81DDC2275000BC9E7 /* Demo_CameraViewController.swift */,
 				16E605AA1DDC2281000BC9E7 /* Demo_HistoryViewController.swift */,
+				1600E01C1DD32F130009F5DD /* Model */,
 			);
 			name = Demo;
 			sourceTree = "<group>";
