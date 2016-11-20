@@ -36,8 +36,8 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>NSCameraUsageDescription</key>
-	<string>Sombra - Your camera is hacked!</string>
+	<string>Camera access is needed to analyze emotions from live video feed.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Sombra - Your photo library is hacked!</string>
+	<string>Photo library access is needed to analyze emotions from your photos.</string>
 </dict>
 </plist>
